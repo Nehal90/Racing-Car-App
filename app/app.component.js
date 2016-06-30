@@ -9,29 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var car_parts_component_1 = require('./car-parts.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Ultra Racing';
-        this.carPart = {
-            "id": 1,
-            "name": "Super Tires",
-            "desc": "These tires are world class!",
-            "inStock": 5
-        };
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>{{title}}</h1>\n  \t\t\t\t<h2>{{carPart.name}}<h2>\n  \t\t\t\t<p>{{carPart.desc}}<p>\n  \t\t\t\t<p>{{carPart.inStock}}<p>\n  \t\t\t"
+            template: "\n\t  \t\t<h1>{{title}}</h1>\n\t  \t\t<car-parts></car-parts>\t\n\t  \t\t",
+            directives: [car_parts_component_1.CarPartsComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/ 
 //# sourceMappingURL=app.component.js.map
