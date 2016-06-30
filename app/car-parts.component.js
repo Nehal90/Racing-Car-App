@@ -9,30 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var mocks_1 = require('./mocks');
 var CarPartsComponent = (function () {
     function CarPartsComponent() {
-        this.carParts = [
-            {
-                "id": 1,
-                "name": "Super Tires",
-                "desc": "These tires are world class!",
-                "inStock": 6,
-                "price": 82.49
-            },
-            {
-                "id": 2,
-                "name": "Reinforced Shocks",
-                "desc": "Shocks made from metal!",
-                "inStock": 0,
-                "price": 149.99
-            },
-            {
-                "id": 3,
-                "name": "Padded Seats",
-                "desc": "Softest seat ever!",
-                "inStock": 14,
-                "price": 69.99
-            }];
     }
     CarPartsComponent.prototype.totalCarParts = function () {
         var sum = 0;
@@ -42,11 +21,14 @@ var CarPartsComponent = (function () {
         }
         return sum;
     };
+    CarPartsComponent.prototype.ngOnInit = function () {
+        this.carParts = mocks_1.CARPARTS;
+    };
     CarPartsComponent = __decorate([
         core_1.Component({
             selector: 'car-parts',
             templateUrl: 'app/car-parts.component.html',
-            stylesUrls: ['app/car-parts.component.css']
+            styleUrls: ['app/car-parts.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], CarPartsComponent);

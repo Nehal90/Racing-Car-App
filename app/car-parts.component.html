@@ -2,7 +2,7 @@
 	  		<ul>
 	  			<li *ngFor="let carPart of carParts">
 	  				{{carPart.name | uppercase}}
-	  				<p class="desc">{{carPart.desc}}
+	  				<p class="description">{{carPart.desc}}
 	  				<p class="price">Price: {{carPart.price}}
 	  				<p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in Stock
 	  				<p *ngIf="carPart.inStock === 0">Out of Stock
