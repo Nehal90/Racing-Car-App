@@ -5,6 +5,6 @@ To run this app:
 
 - Make sure Node.js and NPM are installed.
 
--Open the command window and cd to application's root folder
+- Open the command window and cd to application's root folder
 
--Type npm start to run the app in watch mode
+- Type npm start to run the app in watch mode
