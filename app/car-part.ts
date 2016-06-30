@@ -5,4 +5,5 @@ export class CarPart {
 	desc: string;
 	inStock: number;
 	price: number;
+	quantity: number;
 }

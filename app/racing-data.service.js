@@ -10,22 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var car_parts_component_1 = require('./car-parts.component');
-var racing_data_service_1 = require('./racing-data.service');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Ultra Racing';
+require('rxjs/add/operator/map');
+var RacingDataService = (function () {
+    function RacingDataService(http) {
+        this.http = http;
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n\t  \t\t<h1>{{title}}</h1>\n\t  \t\t<car-parts></car-parts>\t\n\t  \t\t",
-            directives: [car_parts_component_1.CarPartsComponent],
-            providers: [racing_data_service_1.RacingDataService, http_1.HTTP_PROVIDERS]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    RacingDataService.prototype.getCarParts = function () {
+        return this.http.get('app/car-parts-data.json')
+            .map(function (response) { return response.json().data; });
+    };
+    RacingDataService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], RacingDataService);
+    return RacingDataService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.RacingDataService = RacingDataService;
+//# sourceMappingURL=racing-data.service.js.map
